@@ -1,5 +1,6 @@
 package com.equitydash.api.resources;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.equitydash.api.repository.AcaoRepository;
@@ -30,10 +32,11 @@ public class AcaoResource {
 	@Autowired
 	AcaoRepository acaoRepository;
 	
-	@ApiOperation(value="Retorna todas ações cadastradas pelo usuário")
-	@GetMapping("/acoes")
-	public List<Acao> listaAcoes(){
-		return acaoRepository.findAll();
+	@ApiOperation(value="Retorna uma ação específica com base no id fornecido")
+	@GetMapping("/acoes/")
+	public List<Acao> acaoPorIntervalo(@RequestParam Optional<BigDecimal> limInf, @RequestParam Optional<BigDecimal> limSup ){
+		if(limInf.isPresent() && limSup.isPresent()) return acaoRepository.findByInterval(limInf, limSup);
+		else return acaoRepository.findAll();
 	}
 	
 	@ApiOperation(value="Retorna uma ação específica com base no id fornecido")
@@ -41,6 +44,7 @@ public class AcaoResource {
 	public Optional<Acao> acaoPorId(@PathVariable(value="id") long id){
 		return acaoRepository.findById(id);
 	}
+	
 	
 	@ApiOperation(value="Cadastra uma nova ação")
 	@PostMapping("/acoes")
