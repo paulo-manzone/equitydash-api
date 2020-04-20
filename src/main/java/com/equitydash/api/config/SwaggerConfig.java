@@ -34,10 +34,10 @@ public class SwaggerConfig {
 
         ApiInfo apiInfo = new ApiInfo(
                 "Produtos API REST",
-                "API REST de cadastro de produtos.",
+                "API REST de Cadastro e Valuation de Ações.",
                 "1.0",
                 "Terms of Service",
-                new Contact("Michelli Brito", "https://github.com/paulo-manzone",
+                new Contact("Paulo Maia", "https://github.com/paulo-manzone",
                         "pmanzonemaia@gmail.com"),
                 "Apache License Version 2.0",
                 "https://www.apache.org/licesen.html", new ArrayList<VendorExtension>()
