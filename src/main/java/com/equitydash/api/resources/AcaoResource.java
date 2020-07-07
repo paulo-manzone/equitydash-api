@@ -33,7 +33,7 @@ public class AcaoResource {
 	AcaoRepository acaoRepository;
 	
 	@ApiOperation(value="Retorna uma ação específica com base no id fornecido")
-	@GetMapping("/acoes/")
+	@GetMapping("/acoes")
 	public List<Acao> acaoPorIntervalo(@RequestParam Optional<BigDecimal> limInf, @RequestParam Optional<BigDecimal> limSup ){
 		if(limInf.isPresent() && limSup.isPresent()) return acaoRepository.findByInterval(limInf, limSup);
 		else return acaoRepository.findAll();

@@ -1,0 +1,22 @@
+version: '3.3'
+volumes:
+  datateste:
+services:
+  db:
+    image: mysql:5.6
+    ports:
+      - "3306:3306"
+    volumes:
+      - datateste:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+      - MYSQL_DATABASE=equitydash
+  api:
+    image: maven
+    volumes:
+      - "./:/deploy"
+    working_dir: "/deploy"
+    ports: 
+      - "65534:65534"
+    command: bash -c "mvn clean && mvn install  && java -jar ./target/api-0.0.1-SNAPSHOT.jar"
+    container_name: "equitydash-api"

@@ -17,12 +17,17 @@ import io.swagger.annotations.Api;
 public class ValuationResource {
 	
 	@GetMapping("/graham")
-	public BigDecimal getGraham(@RequestParam BigDecimal lpa, @RequestParam BigDecimal vpa){
-		return BigDecimal.valueOf(Math.sqrt(22.5*lpa.doubleValue()*vpa.doubleValue()));
+	public BigDecimal getGraham(@RequestParam String lpa, @RequestParam String vpa){
+		BigDecimal llpa = new BigDecimal(lpa);
+		BigDecimal lvpa = new BigDecimal(vpa);
+		return BigDecimal.valueOf(Math.sqrt(22.5*llpa.doubleValue()*lvpa.doubleValue()));
 	}
 	
 	@GetMapping("/gordon")
-	public BigDecimal getGordon(@RequestParam BigDecimal dividendo, @RequestParam float k, @RequestParam float g){
-		return BigDecimal.valueOf(dividendo.doubleValue()/(k-g));
+	public BigDecimal getGordon(@RequestParam String dividendo, @RequestParam String k, @RequestParam String g){
+		BigDecimal ldividendo = new BigDecimal(dividendo);
+		Float lk = Float.valueOf(k);
+		Float lg = Float.valueOf(g);
+		return BigDecimal.valueOf(ldividendo.doubleValue()/(lk-lg));
 	}
 }
