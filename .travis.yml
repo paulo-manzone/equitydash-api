@@ -9,6 +9,6 @@ before_install:
   - curl -L https://github.com/docker/compose/releases/download/3.3.0/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-  - docker-compose up db
+  - sudo docker-compose up db
   - docker ps
   - echo 'done'
