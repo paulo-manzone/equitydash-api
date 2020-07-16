@@ -7,7 +7,7 @@ jdk:
 before_install:
   - chmod +x mvnw
   - sudo apt-get update
-  - sudo apt-get install docker-engine
+  - sudo apt-get install  addocker-engine
   - docker-compose --version
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -16,3 +16,4 @@ before_install:
   - docker-compose --version
   - docker-compose up db
   - docker ps
+  - echo 'done'
