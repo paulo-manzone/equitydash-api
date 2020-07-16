@@ -1,5 +1,10 @@
 language: java
+services: docker
 jdk:
   - openjdk8
 before_install:
   - chmod +x mvnw
+  - sudo apt-get update
+  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+  - sudo docker-compose --v
+  - sudo docker-compose up db
