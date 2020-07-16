@@ -2,15 +2,13 @@ language: java
 services: docker
 jdk:
   - openjdk8
-  env:
-    DOCKER_COMPOSE_VERSION: 1.8.0
 before_install:
   - chmod +x mvnw
   - sudo apt-get update
   - sudo apt-get install  addocker-engine
   - docker-compose --version
   - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - docker-compose --version
