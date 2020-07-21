@@ -29,7 +29,7 @@ For more detailed info, refer to [Swagger UI](localhost:65534/swagger-ui.html) a
  2. Make sure the datasource is set properly in **application.properties**
  3. Run the command:  `< sudo docker-compose up>` in the project folder 
 
- ## Contribuiting
+ ## Contributing
 
  You can mail me at pmanzonemaia@gmail.com.
 
