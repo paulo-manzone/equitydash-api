@@ -1,5 +1,6 @@
 # equitydash-api
 [![Build Status](https://travis-ci.org/paulo-manzone/equitydash-api.svg?branch=master)](https://travis-ci.org/paulo-manzone/equitydash-api)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 # Description
 Spring Rest Api dedicated to provide stock valuation and management to a dashboard application.
@@ -12,7 +13,7 @@ Spring Rest Api dedicated to provide stock valuation and management to a dashboa
 | GET | /valuation/gordon | get gordon evaluation for specified parameter: ?dividendo ?k ?g |
 | GET | /valuation/graham | get graham evaluation for specified parameter: ?lpa ?vpa |
 
-For more detailed info, refer to [Swagger UI](localhost:65534/swagger-ui.html) after running the api locally.
+For more detailed info, refer to [Swagger UI](localhost:65534/swagger-ui.html) after running the api locally (localhost:65534/swagger-ui.html).
 
 ## Post body example
 
@@ -27,7 +28,7 @@ For more detailed info, refer to [Swagger UI](localhost:65534/swagger-ui.html) a
 
  1. If not installed, get docker and docker-compose
  2. Make sure the datasource is set properly in **application.properties**
- 3. Run the command:  `< sudo docker-compose up>` in the project folder 
+ 3. Run the command:  ` sudo docker-compose up ` in the project folder 
 
  ## Contributing
 
