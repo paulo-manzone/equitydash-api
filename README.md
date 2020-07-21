@@ -1,6 +1,7 @@
 # equitydash-api
 [![Build Status](https://travis-ci.org/paulo-manzone/equitydash-api.svg?branch=master)](https://travis-ci.org/paulo-manzone/equitydash-api)
 
+<<<<<<< HEAD
 # Description
 Spring Rest Api dedicated to provide stock valuation and management to a dashboard application.
 
@@ -32,6 +33,12 @@ For more detailed info, refer to [Swagger UI](localhost:65534/swagger-ui.html) a
  ## Contribuiting
 
  You can mail me at pmanzonemaia@gmail.com.
+=======
+#Descrição
+Spring Rest Api para aplicação de Dashboard de gerenciamento e valuation de ações
+>>>>>>> 28dfe852956eb6f965619bb36b00cd3000a81df3
+
+
 
 
 
